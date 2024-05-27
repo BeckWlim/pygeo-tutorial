@@ -108,6 +108,7 @@ def getImageCluster( lon_deg,lat_deg,   delta_long, delta_lat,zoom,style,printlo
     import threading
     threads = []
     Cluster = Image.new('RGB',((xmax-xmin+1)*imgsize-1,(ymax-ymin+1)*imgsize-1)) 
+    print(smurl)
     for xtile in range(xmin, xmax+1):
         for ytile in range(ymin,  ymax+1):
             threads.append(threading.Thread(target=get_img,args = (smurl,zoom, xtile, ytile,imgsize,imgsavepath)))
